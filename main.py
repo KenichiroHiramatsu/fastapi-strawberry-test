@@ -31,6 +31,11 @@ app = FastAPI()
 app.include_router(graphql_app, prefix="/graphql")
 
 
+@app.get("/")
+def home():
+    return {"Hello": "World from FastAPI"}
+
+
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=os.getenv(
         "PORT", default=5000), log_level="info")
