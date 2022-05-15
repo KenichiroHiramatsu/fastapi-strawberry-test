@@ -1,5 +1,7 @@
+import os
 from typing import List
 import strawberry
+import uvicorn
 
 from tasks.resolvers import add_task, delete_task, get_tasks, get_task, update_task
 from tasks.types import TaskType
@@ -27,3 +29,8 @@ graphql_app = GraphQLRouter(
     schema=schema, graphiql=False)  # graphiqlは本番環境ではFalseに
 app = FastAPI()
 app.include_router(graphql_app, prefix="/graphql")
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=os.getenv(
+        "PORT", default=5000), log_level="info")
