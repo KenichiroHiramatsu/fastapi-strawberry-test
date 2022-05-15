@@ -4,10 +4,12 @@ from datetime import datetime
 from enum import Enum
 from typing import Optional
 
+
 class Status(Enum):
     TODO = "todo"
     DOING = "doing"
     DONE = "done"
+
 
 @dataclass
 class Task:

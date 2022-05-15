@@ -27,6 +27,7 @@ def add_task(task_input: AddTaskInput) -> TaskType:
     db = InMemoryRepository
     service = TaskService(db)
     task = service.create(**task_input.__dict__)
+    print(TaskType.from_instance(task))
     return TaskType.from_instance(task)
 
 
