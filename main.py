@@ -79,24 +79,24 @@ def index():
     #         )
     #         st.json(response.content.decode())
 
-    elif page == 'taskList':
-        st.title("工事中")
-        # st.title("APIテスト(taskList)")
-        # url = 'http://127.0.0.1:8000/graphql'
-        # headers = {
-        #     "Content-Type": "application/json",
-        # }
-        # # graphqlのqueryを記述
-        # query = """
-        #     query() {
-        #     tasks() {title}
-        #     }
-        # """
-        # response = requests.get(
-        #     url, headers=headers
-        # )
-        # print(response.content)
-        # st.json(response.content)
+    # elif page == 'taskList':
+    #     st.title("工事中")
+    #     # st.title("APIテスト(taskList)")
+    #     # url = 'http://127.0.0.1:8000/graphql'
+    #     # headers = {
+    #     #     "Content-Type": "application/json",
+    #     # }
+    #     # # graphqlのqueryを記述
+    #     # query = """
+    #     #     query() {
+    #     #     tasks() {title}
+    #     #     }
+    #     # """
+    #     # response = requests.get(
+    #     #     url, headers=headers
+    #     # )
+    #     # print(response.content)
+    #     # st.json(response.content)
 
 
 if __name__ == "__main__":
