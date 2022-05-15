@@ -24,6 +24,6 @@ class Mutation:
 schema = strawberry.Schema(query=Query, mutation=Mutation)
 
 graphql_app = GraphQLRouter(
-    schema=schema, graphiql=True)  # graphiqlは本番環境ではFalseに
+    schema=schema, graphiql=False)  # graphiqlは本番環境ではFalseに
 app = FastAPI()
 app.include_router(graphql_app, prefix="/graphql")
