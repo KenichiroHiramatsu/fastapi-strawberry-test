@@ -1,3 +1,7 @@
+### 仮想環境アクティベート
+
+`source .venv/bin/activate`
+
 ### フロントサーバー起動方法(ローカルのみ)
 
 `streamlit run app.py`

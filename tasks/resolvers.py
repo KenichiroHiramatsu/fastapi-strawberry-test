@@ -6,14 +6,6 @@ from tasks.repositories import InMemoryRepository
 from tasks.services import TaskService
 from tasks.types import TaskType
 
-import pymongo
-from pymongo import MongoClient
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-CONNECTION_URL = os.getenv('CONNECTION_URL')
-
 
 def get_task(id: strawberry.ID) -> TaskType:
     db = InMemoryRepository
@@ -24,15 +16,9 @@ def get_task(id: strawberry.ID) -> TaskType:
 
 
 def get_tasks() -> List[TaskType]:
-    # client = pymongo.MongoClient(CONNECTION_URL)
-    # db = client.FastApiDB.tasks
-    # print(db)
-    # document = db.find()
-    # client.close()
-    # response = [document[i] for i in range(document.count())]
-
     db = InMemoryRepository
     service = TaskService(db)
+
     tasks = service.find_all()
 
     return [TaskType.from_instance(task) for task in tasks]
